@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Agenda - Salão Glamour</title>
+  <link rel="stylesheet" href="../css/minhaagenda.css">
+  <link rel="stylesheet" href="../css/mensagens.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header com Menu -->
+    <header class="header">
+      <nav class="nav-menu">
+        <a href="/minhaagenda" class="nav-link active">📅 Minha Agenda</a>
+        <a href="/servicos" class="nav-link">💇‍♀️ Serviços</a>
+        <a href="/agenda" class="nav-link">⏰ Agendar</a>
+        <a href="/avaliacao" class="nav-link">⭐ Avaliação</a>
+        <a href="/calendario" class="nav-link">📆 Calendário</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="page-title">📅 Minha Agenda</h1>
+      <p class="page-subtitle">Confira seu histórico de agendamentos e serviços realizados</p>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="pending">Próximos</button>
+        <button class="filter-btn" data-filter="completed">Realizados</button>
+        <button class="filter-btn" data-filter="cancelled">Cancelados</button>
+      </div>
+
+      <!-- Estatísticas -->
+      <div class="stats-cards">
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-info">
+            <h3>Total de Agendamentos</h3>
+            <span class="stat-number" id="total-agendamentos">0</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-info">
+            <h3>Próximos</h3>
+            <span class="stat-number" id="proximos-agendamentos">0</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <h3>Realizados</h3>
+            <span class="stat-number" id="realizados-agendamentos">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de Agendamentos -->
+      <section class="agendamentos-section">
+        <h2>📋 Meus Agendamentos</h2>
+        
+        <div class="agendamentos-list" id="agendamentos-list">
+          <!-- Os agendamentos serão carregados aqui via JavaScript -->
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Carregando seus agendamentos...</p>
+          </div>
+        </div>
+
+        <!-- Mensagem quando não há agendamentos -->
+        <div class="no-agendamentos" id="no-agendamentos" style="display: none;">
+          <div class="empty-state">
+            <div class="empty-icon">📅</div>
+            <h3>Nenhum agendamento encontrado</h3>
+            <p>Você ainda não possui agendamentos. Que tal marcar seu primeiro horário?</p>
+            <a href="/agenda" class="btn-primary">🔄 Fazer Agendamento</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Histórico de Serviços -->
+      <section class="historico-section">
+        <h2>📊 Histórico de Serviços</h2>
+        
+        <div class="servicos-stats">
+          <div class="servico-stat">
+            <span class="servico-name">Corte de Cabelo</span>
+            <span class="servico-count">0 vezes</span>
+          </div>
+          <div class="servico-stat">
+            <span class="servico-name">Coloração</span>
+            <span class="servico-count">0 vezes</span>
+          </div>
+          <div class="servico-stat">
+            <span class="servico-name">Manicure</span>
+            <span class="servico-count">0 vezes</span>
+          </div>
+          <div class="servico-stat">
+            <span class="servico-name">Pedicure</span>
+            <span class="servico-count">0 vezes</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/servicos" class="footer-link">Serviços</a>
+        <a href="/agenda" class="footer-link">Agendar</a>
+        <a href="/avaliacao" class="footer-link">Avaliação</a>
+        <a href="/calendario" class="footer-link">Calendário</a>
+      </div>
+      <p class="footer-text">© 2024 Salão Glamour - Sua beleza em primeiro lugar</p>
+    </footer>
+  </div>
+
+  <script src="../js/minhaagenda.js"></script>
+</body>
+</html>

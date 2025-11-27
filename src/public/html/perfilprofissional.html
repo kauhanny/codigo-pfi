@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil Profissional - Salão Glamour</title>
+  <link rel="stylesheet" href="../css/perfilprofissional.css">
+  <link rel="stylesheet" href="../css/mensagens.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header com Menu -->
+    <header class="header">
+      <nav class="nav-menu">
+        <a href="/minhaagenda" class="nav-link">📅 Minha Agenda</a>
+        <a href="/servicos" class="nav-link">💇‍♀️ Serviços</a>
+        <a href="/agenda" class="nav-link">⏰ Agendar</a>
+        <a href="/avaliacao" class="nav-link">⭐ Avaliação</a>
+        <a href="/calendario" class="nav-link">📆 Calendário</a>
+        <a href="/perfilprofissional" class="nav-link active">👩‍💼 Perfil Profissional</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Verificação de Acesso -->
+      <div id="acessoNegado" class="acesso-negado">
+        <div class="acesso-negado-content">
+          <div class="acesso-negado-icon">🔒</div>
+          <h2>Acesso Restrito</h2>
+          <p>Esta área é exclusiva para profissionais cadastradas.</p>
+          <button id="btnCadastrarProfissional" class="btn-cadastrar">
+            👩‍💼 Cadastrar Perfil Profissional
+          </button>
+        </div>
+      </div>
+
+      <!-- Conteúdo para Profissionais (inicialmente escondido) -->
+      <div id="conteudoProfissional" class="conteudo-profissional" style="display: none;">
+        
+        <!-- Cadastro de Profissional -->
+        <section id="cadastroSection" class="cadastro-section">
+          <h1 class="page-title">👩‍💼 Cadastro Profissional</h1>
+
+          <!-- Foto de Capa para Serviços -->
+          <div class="foto-section">
+            <h3>🖼️ Foto de Capa para Serviços</h3>
+            <div class="foto-container">
+              <img id="fotoCapaPreview" src="../img/capa-default.jpg" alt="Foto de capa" style="width: 300px; height: 150px; object-fit: cover; border-radius: 10px;">
+              <input type="file" id="fotoCapaInput" accept="image/*" style="display: none;">
+              <button onclick="document.getElementById('fotoCapaInput').click()" class="btn-foto">
+                Escolher Foto de Capa
+              </button>
+            </div>
+            <small>Esta foto aparecerá na página de serviços</small>
+          </div>
+
+          <!-- Informações Pessoais -->
+          <div class="form-section">
+            <h3>👤 Informações Pessoais</h3>
+            <div class="form-grid">
+              <div class="input-group">
+                <label>Nome Completo</label>
+                <input type="text" id="nomeProfissional" placeholder="Seu nome completo">
+              </div>
+              <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" id="emailProfissional" placeholder="seu@email.com">
+              </div>
+              <div class="input-group">
+                <label>Telefone</label>
+                <input type="tel" id="telefoneProfissional" placeholder="(11) 99999-9999">
+              </div>
+              <div class="input-group">
+                <label>Endereço de Atendimento</label>
+                <input type="text" id="enderecoProfissional" placeholder="Onde você atende">
+              </div>
+              <div class="input-group">
+                <label>📝 Descrição Profissional</label>
+                <textarea id="descricaoProfissional" placeholder="Conte um pouco sobre você e sua experiência..." rows="3"></textarea>
+              </div>
+              <div class="input-group">
+                <label>💅 Especialidades</label>
+                <input type="text" id="especialidadesProfissional" placeholder="Ex: Cabelo, Unhas, Maquiagem, Estética...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificação -->
+          <div class="certificacao-section">
+            <h3>📜 Certificação Profissional</h3>
+            <div class="certificacao-upload">
+              <div class="upload-area" id="uploadCertificado">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Clique para enviar seu certificado</p>
+                <small>PDF, JPG, PNG (Máx. 5MB)</small>
+                <input type="file" id="certificadoInput" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+              </div>
+              <div id="certificadoPreview" class="certificado-preview" style="display: none;">
+                <i class="fas fa-file-certificate"></i>
+                <span>Certificado carregado</span>
+                <button onclick="removerCertificado()">❌</button>
+              </div>
+            </div>
+            <div class="verificacao-status">
+              <span id="statusVerificacao">⏳ Aguardando certificado</span>
+            </div>
+          </div>
+
+          <!-- Serviços -->
+          <div class="servicos-section">
+            <h3>💅 Serviços Oferecidos</h3>
+            <div class="servicos-lista" id="servicosLista">
+              <p class="empty-message">Nenhum serviço cadastrado ainda</p>
+            </div>
+            
+            <button class="btn-adicionar" onclick="mostrarModalServico()">
+              ➕ Adicionar Serviço
+            </button>
+          </div>
+
+          <!-- Dados PIX -->
+          <div class="pix-section">
+            <h3>💰 Dados PIX para Recebimento</h3>
+            <div class="pix-form">
+              <div class="input-group">
+                <label>Chave PIX</label>
+                <input type="text" id="chavePix" placeholder="CPF, e-mail, telefone ou chave aleatória">
+              </div>
+              <div class="input-group">
+                <label>Tipo da Chave</label>
+                <select id="tipoChavePix">
+                  <option value="cpf">CPF</option>
+                  <option value="email">E-mail</option>
+                  <option value="telefone">Telefone</option>
+                  <option value="aleatoria">Chave Aleatória</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botão Finalizar Cadastro -->
+          <div class="action-buttons">
+            <button class="btn-finalizar" onclick="finalizarCadastroProfissional()">
+              ✅ Finalizar Cadastro
+            </button>
+          </div>
+        </section>
+
+        <!-- Perfil Completo (aparece após cadastro) -->
+        <div id="perfilCompleto" class="perfil-completo" style="display: none;">
+          <h1 class="page-title">👩‍💼 Meu Perfil Profissional</h1>
+          
+          <div class="perfil-header">
+            <div class="perfil-info">
+              <h2 id="nomePerfilCompleto">Nome do Profissional</h2>
+              <p class="especialidades" id="especialidadesPerfilCompleto">Especialidades</p>
+              <p class="descricao" id="descricaoPerfilCompleto">Descrição profissional</p>
+              <div class="contato-info">
+                <p>📞 <span id="contatoPerfilCompleto">Telefone</span></p>
+                <p>📍 <span id="enderecoPerfilCompleto">Endereço</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meus Serviços -->
+          <section class="servicos-perfil">
+            <h3>💅 Meus Serviços</h3>
+            <div class="servicos-lista" id="servicosPerfil">
+              <p class="empty-message">Nenhum serviço cadastrado</p>
+            </div>
+            
+            <button class="btn-adicionar" onclick="mostrarModalServico()">
+              ➕ Adicionar Novo Serviço
+            </button>
+          </section>
+
+          <!-- Botão para Agenda -->
+          <div class="action-buttons">
+            <button class="btn-agenda" onclick="irParaAgendaProfissional()">
+              📊 Ir para Minha Agenda
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/servicos" class="footer-link">Serviços</a>
+        <a href="/agenda" class="footer-link">Agendar</a>
+        <a href="/avaliacao" class="footer-link">Avaliação</a>
+        <a href="/calendario" class="footer-link">Calendário</a>
+      </div>
+      <p class="footer-text">© 2024 Salão Glamour - Empoderando mulheres através da beleza</p>
+    </footer>
+  </div>
+
+  <!-- Modal para Adicionar Serviço -->
+  <div id="modalServico" class="modal">
+    <div class="modal-backdrop" onclick="fecharModalServico()"></div>
+    <div class="modal-content-scrollable">
+      <div class="modal-header">
+        <h2>➕ Adicionar Serviço</h2>
+        <span class="close" onclick="fecharModalServico()">&times;</span>
+      </div>
+      
+      <div class="modal-body">
+        <form id="formServico">
+          <!-- Upload de Foto do Serviço -->
+          <div class="input-group">
+            <label>📸 Foto do Serviço</label>
+            <div class="foto-servico-upload">
+              <div id="fotoServicoPreview" style="display: none; margin-bottom: 15px; text-align: center;">
+                <img id="fotoServicoImg" src="" alt="Preview do serviço" 
+                     style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #d776ad;">
+                <div style="margin-top: 10px;">
+                  <button type="button" onclick="removerFotoServico()" class="btn-remover-foto">
+                    🗑️ Remover Foto
+                  </button>
+                </div>
+              </div>
+              <input type="file" id="fotoServicoInput" accept="image/*" style="display: none;">
+              <button type="button" onclick="document.getElementById('fotoServicoInput').click()" class="btn-foto">
+                📷 Escolher Foto do Serviço
+              </button>
+            </div>
+            <small>Esta foto aparecerá como capa do serviço na página de serviços</small>
+          </div>
+          
+          <div class="input-group">
+            <label>Nome do Serviço *</label>
+            <input type="text" id="nomeServico" placeholder="Ex: Corte de Cabelo" required>
+          </div>
+          
+          <div class="input-group">
+            <label>Descrição</label>
+            <textarea id="descricaoServico" placeholder="Descreva o serviço oferecido..." rows="3"></textarea>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group">
+              <label>Preço (R$) *</label>
+              <input type="number" id="precoServico" placeholder="0.00" step="0.01" min="0" required>
+            </div>
+            
+            <div class="input-group">
+              <label>Duração (minutos) *</label>
+              <input type="number" id="duracaoServico" placeholder="60" min="15" step="15" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label>Categoria</label>
+            <select id="categoriaServico">
+              <option value="cabelo">💇 Cabelo</option>
+              <option value="unhas">💅 Unhas</option>
+              <option value="estetica">✨ Estética Facial</option>
+              <option value="corporal">🏃 Estética Corporal</option>
+              <option value="maquiagem">💄 Maquiagem</option>
+              <option value="outros">🌟 Outros</option>
+            </select>
+          </div>
+          
+          <div class="modal-buttons">
+            <button type="button" class="btn-cancelar" onclick="fecharModalServico()">Cancelar</button>
+            <button type="submit" class="btn-adicionar-modal">Adicionar Serviço</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/perfilprofissional.js"></script>
+</body>
+</html>

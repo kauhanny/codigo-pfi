@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliação - Salão Glamour</title>
+
+<link rel="stylesheet" href="../css/avaliacao.css">
+<link rel="stylesheet" href="../css/mensagens.css">
+
+<!-- Bootstrap Icons (para estrelas) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Avalie Seu Atendimento</h2>
+
+    <!-- FORM ADICIONADO AQUI -->
+    <form id="formAvaliacao">
+        <label>Seu Nome:</label>
+        <input type="text" placeholder="Digite seu nome" required>
+
+        <label>Profissional:</label>
+        <input type="text" placeholder="Digite o nome do profissional" required>
+
+        <label>Serviço realizado:</label>
+        <input type="text" placeholder="Digite o serviço realizado" required>
+
+        <label>Data do atendimento:</label>
+        <input type="date" required>
+
+        <label>Nota:</label>
+        <div id="rating">
+            <i class="bi bi-star star" data-value="1"></i>
+            <i class="bi bi-star star" data-value="2"></i>
+            <i class="bi bi-star star" data-value="3"></i>
+            <i class="bi bi-star star" data-value="4"></i>
+            <i class="bi bi-star star" data-value="5"></i>
+        </div>
+
+        <input type="hidden" id="rating-value" name="rating" value="0">
+
+        <label>Comentário:</label>
+        <textarea placeholder="Conte como foi sua experiência..."></textarea>
+
+        <button type="submit">Enviar Avaliação</button>
+    </form>
+    <!-- FIM DO FORM -->
+</div>
+
+<script src="../js/avaliacao.js"></script>
+
+</body>
+</html>

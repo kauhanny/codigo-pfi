@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços - Salão Glamour</title>
+  <link rel="stylesheet" href="../css/servicos.css">
+  <link rel="stylesheet" href="../css/mensagens.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header com Menu -->
+    <header class="header">
+      <nav class="nav-menu">
+        <a href="/minhaagenda" class="nav-link">📅 Minha Agenda</a>
+        <a href="/servicos" class="nav-link active">💇‍♀️ Serviços</a>
+        <a href="/agenda" class="nav-link">⏰ Agendar</a>
+        <a href="/avaliacao" class="nav-link">⭐ Avaliação</a>
+        <a href="/calendario" class="nav-link">📆 Calendário</a>
+        <a href="/perfilprofissional" class="nav-link">👩‍💼 Perfil Profissional</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="page-title">💅 Serviços Disponíveis</h1>
+      
+      <!-- Container de serviços públicos -->
+      <div class="servicos-container" id="servicosContainer">
+        <div class="loading">Carregando serviços...</div>
+      </div>
+
+      <!-- LIXEIRA APENAS PARA PROFISSIONAL - DENTRO DO CONTAINER -->
+      <div id="lixeiraProfissional" style="display: none; margin-top: 40px; padding: 25px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 15px; border: 2px solid #a94f77; box-shadow: 0 4px 15px rgba(169, 79, 119, 0.1);">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+          <div style="background: #a94f77; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+            🗑️
+          </div>
+          <div>
+            <h3 style="color: #a94f77; margin: 0; font-size: 1.4rem;">Área do Profissional</h3>
+            <p style="color: #666; margin: 5px 0 0 0; font-size: 0.9rem;">
+              Gerencie seus serviços cadastrados
+            </p>
+          </div>
+        </div>
+        
+        <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #e9ecef;">
+          <h4 style="color: #495057; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-list" style="color: #a94f77;"></i>
+            Seus Serviços Cadastrados
+          </h4>
+          <div id="servicosProfissionalContainer" style="min-height: 100px;">
+            <div class="loading" style="padding: 30px; text-align: center; color: #666;">
+              Carregando seus serviços...
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px;">
+          <p style="margin: 0; color: #856404; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-info-circle" style="color: #f39c12;"></i>
+            <strong>Dica:</strong> Clique no ícone 🗑️ para deletar um serviço
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/servicos" class="footer-link">Serviços</a>
+        <a href="/agenda" class="footer-link">Agendar</a>
+        <a href="/avaliacao" class="footer-link">Avaliação</a>
+        <a href="/calendario" class="footer-link">Calendário</a>
+      </div>
+      <p class="footer-text">© 2024 Salão Glamour - Empoderando mulheres através da beleza</p>
+    </footer>
+  </div>
+
+  <script src="../js/servicos.js"></script>
+</body>
+</html>

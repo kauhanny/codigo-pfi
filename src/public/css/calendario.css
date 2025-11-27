@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../img/imagem.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #a94f77;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Grade da Semana */
+.grade-semana {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dia {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 3px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.dia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.dia h2 {
+    color: #a94f77;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.horas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.horario {
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.horario.disponivel {
+    background: #e8f5e8;
+    border-color: #4caf50;
+    color: #2e7d32;
+}
+
+.horario.ocupado {
+    background: #ffebee;
+    border-color: #f44336;
+    color: #c62828;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.horario.disponivel:hover {
+    background: #4caf50;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Legenda */
+.legenda {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cor-disponivel {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: #4caf50;
+    border: 2px solid #2e7d32;
+}
+
+.cor-ocupado {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: #f44336;
+    border: 2px solid #c62828;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    background: linear-gradient(135deg, #a94f77, #d776ad);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-voltar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(169, 79, 119, 0.3);
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.loading i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #a94f77;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .grade-semana {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .dia {
+        padding: 20px;
+    }
+    
+    .legenda {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .grade-semana {
+        grid-template-columns: 1fr;
+    }
+    
+    .dia h2 {
+        font-size: 1.1rem;
+    }
+    
+    .horario {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+

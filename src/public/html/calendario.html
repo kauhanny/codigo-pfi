@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horários da Semana</title>
+  <link rel="stylesheet" href="../css/calendario.css">
+  <link rel="stylesheet" href="../css/mensagens.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📅 Horários Disponíveis da Semana</h1>
+
+    <div class="grade-semana" id="gradeSemana">
+      <!-- Os dias e horários serão carregados via JavaScript -->
+      <div class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Carregando horários...</p>
+      </div>
+    </div>
+
+    <div class="legenda">
+      <div class="legenda-item">
+        <div class="cor-disponivel"></div>
+        <span>Disponível</span>
+      </div>
+      <div class="legenda-item">
+        <div class="cor-ocupado"></div>
+        <span>Ocupado</span>
+      </div>
+    </div>
+
+    <button onclick="window.location.href='/agenda'" class="btn-voltar">
+      ← Voltar para Agendamento
+    </button>
+  </div>
+
+  <script src="../js/calendario.js"></script>
+</body>
+</html>
+
+
+
+

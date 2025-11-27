@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+  <link rel="stylesheet" href="/css/mensagens.css">
+  <title>Criar Conta - Salão de Beleza</title>
+</head>
+<body>
+  <main class="container">
+    <h1>Criar Conta</h1>
+
+    <div class="input-box">
+      <input id="nome" placeholder="Nome completo" type="text">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="input-box">
+      <input id="idade" placeholder="Idade" type="number" min="1">
+      <i class="fa-solid fa-calendar"></i>
+    </div>
+
+    <div class="input-box">
+      <input id="telefone" placeholder="Telefone" type="tel">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+
+    <div class="input-box">
+      <input id="endereco" placeholder="Endereço" type="text">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+
+    <div class="input-box">
+      <input id="email" placeholder="E-mail" type="email">
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+
+    <div class="input-box">
+      <input id="senha" placeholder="Senha" type="password">
+      <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <div class="input-box">
+      <input id="confirmar" placeholder="Confirmar senha" type="password">
+      <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <!-- Adicione esta parte antes do botão de cadastrar -->
+<div class="input-box" style="flex-direction: row; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <input type="checkbox" id="tipoProfissional" style="width: 20px; height: 20px;">
+    <label for="tipoProfissional" style="color: #333; font-size: 14px; cursor: pointer;">
+        📋 Cadastrar como Profissional (poderei oferecer serviços)
+    </label>
+</div>
+
+<div class="info-profissional" id="infoProfissional" style="display: none; background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #A94F77;">
+    <p style="margin: 0; color: #666; font-size: 13px;">
+        ✅ Como profissional você poderá:<br>
+        • Oferecer seus serviços<br>
+        • Receber agendamentos<br>
+        • Gerenciar sua agenda<br>
+        • Criar seu perfil profissional
+    </p>
+</div>
+    <button type="submit" class="login" id="btnCadastrar">📝 Cadastrar</button>
+
+    <div class="register-link">
+      <p>Já tem conta? <a href="/login">Entrar</a></p>
+      <p><a href="/">← Voltar para Início</a></p>
+    </div>
+  </main>
+
+  <script src="../js/cadastro.js"></script>
+</body>
+</html>

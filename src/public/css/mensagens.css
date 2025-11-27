@@ -1,0 +1,77 @@
+/* ========== MENSAGENS PERSONALIZADAS ========== */
+.custom-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10000;
+    max-width: 380px;
+    animation: slideIn 0.5s ease;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-message.success {
+    background: rgba(216, 120, 213, 0.9);
+    color: white;
+}
+
+.custom-message.error {
+    background: rgba(244, 67, 54, 0.9);
+    color: white;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.message-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-text {
+    flex: 1;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.message-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.message-close:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateX(400px) scale(0.8); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0) scale(1); 
+        opacity: 1; 
+    }
+}

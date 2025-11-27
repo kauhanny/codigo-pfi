@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Agenda - Profissional</title>
+  <link rel="stylesheet" href="../css/agendaprofissional.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/mensagens.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header com Menu -->
+    <header class="header">
+      <nav class="nav-menu">
+        <a href="/minhaagenda" class="nav-link">📅 Minha Agenda</a>
+        <a href="/servicos" class="nav-link">💇‍♀️ Serviços</a>
+        <a href="/agenda" class="nav-link">⏰ Agendar</a>
+        <a href="/avaliacao" class="nav-link">⭐ Avaliação</a>
+        <a href="/calendario" class="nav-link">📆 Calendário</a>
+        <a href="/perfilprofissional" class="nav-link">👩‍💼 Perfil</a>
+        <a href="/agendaprofissional" class="nav-link active">📊 Minha Agenda</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="page-title">📊 Minha Agenda Profissional</h1>
+
+      <!-- Estatísticas -->
+      <div class="estatisticas">
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-info">
+            <h3>Agendamentos Hoje</h3>
+            <span class="stat-number" id="agendamentosHoje">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agenda Semanal -->
+      <section class="agenda-section">
+        <h2>📅 Agenda da Semana</h2>
+        <div class="calendario-semanal" id="calendarioSemanal">
+          <!-- Dias da semana serão gerados via JavaScript -->
+        </div>
+        
+        <!-- Lista de Agendamentos -->
+        <div class="agendamentos-container">
+          <h3>Todos os Agendamentos</h3>
+          <div class="agendamentos-lista" id="agendamentosLista">
+            <div class="loading">
+              <i class="fas fa-spinner fa-spin"></i>
+              <p>Carregando agendamentos...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Próximos Agendamentos -->
+      <section class="proximos-agendamentos">
+        <h2>⏰ Próximos Agendamentos</h2>
+        <div class="agendamentos-grid" id="proximosAgendamentos">
+          <!-- Próximos agendamentos serão gerados via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Botão de Ações (Opcional) -->
+      <div class="acoes-container">
+        <button class="btn-atualizar" onclick="recarregarAgendamentos()">
+          🔄 Atualizar Agendamentos
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/servicos" class="footer-link">Serviços</a>
+        <a href="/agenda" class="footer-link">Agendar</a>
+        <a href="/avaliacao" class="footer-link">Avaliação</a>
+        <a href="/calendario" class="footer-link">Calendário</a>
+      </div>
+      <p class="footer-text">© 2024 Salão Glamour - Empoderando mulheres através da beleza</p>
+    </footer>
+  </div>
+
+  <script src="../js/agendaprofissional.js"></script>
+</body>
+</html>
