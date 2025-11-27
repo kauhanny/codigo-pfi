@@ -52,7 +52,7 @@ const pool = mysql.createPool({
 
 // ================== SISTEMA DE SESSÃO SIMPLES ==================
 
-// Armazenar sessões em memória (em produção use Redis ou database)
+// Armazenar sessões em memória 
 const sessoes = new Map();
 
 // Middleware para verificar sessão
@@ -393,7 +393,7 @@ app.post('/api/cadastrar', async (req, res) => {
                     });
                 }
                 
-                // Se deu erro por causa da coluna tipo_usuario, tenta sem ela
+                // Se deu erro por causa da coluna tipo_usuario, funcao para tentar sem ela
                 if (err.code === 'ER_BAD_FIELD_ERROR') {
                     console.log('⚠️ Coluna tipo_usuario não existe, tentando cadastro sem ela...');
                     const sqlSemTipo = 'INSERT INTO usuarios (nome_completo, idade, telefone, endereco, email, senha) VALUES (?, ?, ?, ?, ?, ?)';
@@ -776,12 +776,12 @@ app.get('/api/avaliacoes-profissional/:profissional_id', (req, res) => {
     });
 });
 
-// API - Buscar média de avaliações por profissional - VERSÃO CORRIGIDA
+// API - Buscar média de avaliações por profissional 
 app.get('/api/avaliacoes-media/:profissional_nome', (req, res) => {
     const { profissional_nome } = req.params;
     console.log(`📊 Buscando média de avaliações para: ${profissional_nome}`);
     
-    // SQL CORRETO - usa 'profissional' em vez de 'profissional_id' e 'data_criacao' em vez de 'data_avaliacao'
+    // SQL  - usa 'profissional' em vez de 'profissional_id' e 'data_criacao' em vez de 'data_avaliacao'
     const sql = `
         SELECT 
             COUNT(*) as total_avaliacoes,
@@ -818,7 +818,7 @@ app.get('/api/avaliacoes-profissional/:profissional_nome', (req, res) => {
     const { profissional_nome } = req.params;
     console.log(`⭐ Buscando avaliações para: ${profissional_nome}`);
     
-    // SQL CORRETO - usa 'profissional' em vez de 'profissional_id'
+    // SQL  - usa 'profissional' em vez de 'profissional_id'
     const sql = `
         SELECT * FROM avaliacoes 
         WHERE profissional = ? 
@@ -842,7 +842,7 @@ app.get('/api/avaliacoes-profissional/:profissional_nome', (req, res) => {
     });
 });
 
-// API - Buscar TODAS as avaliações (para debug) - VERSÃO CORRIGIDA
+// API - Buscar TODAS as avaliações (para debug)
 app.get('/api/avaliacoes-todas', (req, res) => {
     console.log('⭐ Buscando TODAS as avaliações');
     
@@ -1341,7 +1341,7 @@ app.post('/api/agendar', (req, res) => {
             
             const profissional_id = resultadosProfissional[0].profissional_id;
             
-            // Agora salva o agendamento com o valor fornecido (pode ser o original ou personalizado)
+            // Agora salva o agendamento com o valor fornecido 
             const sqlAgendar = `INSERT INTO agendamentos 
                         (usuario_id, profissional_id, servico, data, hora, valor, status) 
                         VALUES (?, ?, ?, ?, ?, ?, 'pending')`;
@@ -1565,12 +1565,12 @@ app.listen(PORT, HOST, () => {
     const localIP = getLocalIP();
     
     console.log('='.repeat(60));
-    console.log('🚀 Servidor INICIADO com sucesso!');
+    console.log(' Servidor iniciado com sucesso!');
     console.log('='.repeat(60));
-    console.log('⚠️  AVISO: Senhas estão sendo salvas em TEXTO PURO!');
-    console.log(`📍 Acesse LOCALMENTE:  http://localhost:${PORT}`);      
-    console.log(`📍 Acesse pela REDE:   http://${localIP}:${PORT}`);    
+    console.log(' Senhas sao salvas em texto puro!');
+    console.log(` Acesse LOCALMENTE:  http://localhost:${PORT}`);      
+    console.log(` Acesse pela REDE:   http://${localIP}:${PORT}`);    
     console.log('='.repeat(60));
-    console.log('⏰ Iniciado em:', new Date().toLocaleString());
+    console.log(' Iniciado em:', new Date().toLocaleString());
     console.log('='.repeat(60));
 });

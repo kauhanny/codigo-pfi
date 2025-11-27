@@ -33,8 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Verifica se o usuário está logado
   const checkLoginStatus = () => {
-    // Aqui você pode adicionar lógica para verificar se o usuário está logado
-    // Por enquanto, vamos apenas logar no console
     console.log('🔐 Status de login verificado');
   };
   

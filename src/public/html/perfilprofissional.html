@@ -10,7 +10,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header com Menu -->
     <header class="header">
       <nav class="nav-menu">
         <a href="/minhaagenda" class="nav-link">📅 Minha Agenda</a>
@@ -23,7 +22,6 @@
     </header>
 
     <main class="main-content">
-      <!-- Verificação de Acesso -->
       <div id="acessoNegado" class="acesso-negado">
         <div class="acesso-negado-content">
           <div class="acesso-negado-icon">🔒</div>
@@ -35,14 +33,11 @@
         </div>
       </div>
 
-      <!-- Conteúdo para Profissionais (inicialmente escondido) -->
       <div id="conteudoProfissional" class="conteudo-profissional" style="display: none;">
         
-        <!-- Cadastro de Profissional -->
         <section id="cadastroSection" class="cadastro-section">
           <h1 class="page-title">👩‍💼 Cadastro Profissional</h1>
 
-          <!-- Foto de Capa para Serviços -->
           <div class="foto-section">
             <h3>🖼️ Foto de Capa para Serviços</h3>
             <div class="foto-container">
@@ -55,7 +50,6 @@
             <small>Esta foto aparecerá na página de serviços</small>
           </div>
 
-          <!-- Informações Pessoais -->
           <div class="form-section">
             <h3>👤 Informações Pessoais</h3>
             <div class="form-grid">
@@ -86,7 +80,6 @@
             </div>
           </div>
 
-          <!-- Certificação -->
           <div class="certificacao-section">
             <h3>📜 Certificação Profissional</h3>
             <div class="certificacao-upload">
@@ -107,7 +100,6 @@
             </div>
           </div>
 
-          <!-- Serviços -->
           <div class="servicos-section">
             <h3>💅 Serviços Oferecidos</h3>
             <div class="servicos-lista" id="servicosLista">
@@ -119,7 +111,6 @@
             </button>
           </div>
 
-          <!-- Dados PIX -->
           <div class="pix-section">
             <h3>💰 Dados PIX para Recebimento</h3>
             <div class="pix-form">
@@ -139,7 +130,6 @@
             </div>
           </div>
 
-          <!-- Botão Finalizar Cadastro -->
           <div class="action-buttons">
             <button class="btn-finalizar" onclick="finalizarCadastroProfissional()">
               ✅ Finalizar Cadastro
@@ -147,7 +137,6 @@
           </div>
         </section>
 
-        <!-- Perfil Completo (aparece após cadastro) -->
         <div id="perfilCompleto" class="perfil-completo" style="display: none;">
           <h1 class="page-title">👩‍💼 Meu Perfil Profissional</h1>
           
@@ -163,7 +152,6 @@
             </div>
           </div>
 
-          <!-- Meus Serviços -->
           <section class="servicos-perfil">
             <h3>💅 Meus Serviços</h3>
             <div class="servicos-lista" id="servicosPerfil">
@@ -175,7 +163,6 @@
             </button>
           </section>
 
-          <!-- Botão para Agenda -->
           <div class="action-buttons">
             <button class="btn-agenda" onclick="irParaAgendaProfissional()">
               📊 Ir para Minha Agenda
@@ -186,7 +173,6 @@
       </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-links">
         <a href="/servicos" class="footer-link">Serviços</a>
@@ -198,7 +184,6 @@
     </footer>
   </div>
 
-  <!-- Modal para Adicionar Serviço -->
   <div id="modalServico" class="modal">
     <div class="modal-backdrop" onclick="fecharModalServico()"></div>
     <div class="modal-content-scrollable">
@@ -209,7 +194,6 @@
       
       <div class="modal-body">
         <form id="formServico">
-          <!-- Upload de Foto do Serviço -->
           <div class="input-group">
             <label>📸 Foto do Serviço</label>
             <div class="foto-servico-upload">

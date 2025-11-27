@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (tipoUsuario === 'profissional') {
                     mostrarMensagem('🎉 Cadastro profissional realizado com sucesso!', 'success');
                     
-                    // Redirecionar para o MENU (não para perfil profissional)
+                    // Redirecionar para o menu
                     setTimeout(() => {
                         window.location.href = '/menu';
                     }, 2000);

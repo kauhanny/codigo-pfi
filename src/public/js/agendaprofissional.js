@@ -59,7 +59,7 @@ function carregarCalendarioSemanal() {
         const diaNumero = data.getDate();
         const isHoje = index === 0;
         
-        // Formatar data para comparação (YYYY-MM-DD)
+        // Formatar data para comparação 
         const dataFormatada = data.toISOString().split('T')[0];
         
         // Contar agendamentos para este dia
@@ -176,7 +176,7 @@ function carregarProximosAgendamentos() {
         // Buscar agendamentos do localStorage
         const todosAgendamentos = JSON.parse(localStorage.getItem('meusAgendamentos') || '[]');
         
-        // Filtrar próximos agendamentos (próximos 3 dias)
+        // Filtrar próximos agendamentos 
         const hoje = new Date();
         const tresDias = new Date();
         tresDias.setDate(hoje.getDate() + 3);
@@ -236,7 +236,7 @@ function confirmarAgendamento(id) {
     }
 }
 
-// Cancelar agendamento (pela profissional)
+// Cancelar agendamento 
 function cancelarAgendamentoProfissional(id) {
     if (confirm('Tem certeza que deseja cancelar este agendamento?')) {
         atualizarStatusAgendamento(id, 'cancelled');
@@ -326,7 +326,7 @@ function mostrarMensagem(mensagem, tipo) {
 
 // ================== FUNÇÕES GLOBAIS ==================
 
-// Função para forçar atualização (disponível globalmente)
+// Função para forçar atualização 
 window.recarregarAgendamentos = function() {
     recarregarTodasAsSecoes();
     mostrarMensagem('🔄 Agendamentos atualizados!', 'success');

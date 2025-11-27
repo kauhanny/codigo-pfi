@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 mostrarMensagem('✅ ' + dados.message, 'success');
                 
-                // ✅ REDIRECIONAMENTO AUTOMÁTICO
+                // REDIRECIONAMENTO AUTOMÁTICO
                 setTimeout(() => {
                     console.log('🔄 Redirecionando para /menu...');
                     window.location.href = '/menu';

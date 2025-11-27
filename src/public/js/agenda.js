@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 hora: hora
             });
 
-            // Simular envio para API (você pode manter sua API real também)
+            // Simular envio para API
             await new Promise(resolve => setTimeout(resolve, 1500));
 
             // Criar novo agendamento
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         
-        return '1h'; // Duração padrão
+        return '2h'; // Duração padrão
     }
 
     // FUNÇÃO: Carregar serviços do profissional

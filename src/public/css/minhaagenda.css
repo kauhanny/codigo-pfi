@@ -14,7 +14,7 @@ body, html {
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Mudei de center para flex-start */
+    align-items: flex-start; 
     min-height: 100vh;
     background: url('../img/imagem.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -29,7 +29,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
-    max-height: 90vh; /* Altura máxima */
+    max-height: 90vh;
     display: flex;
     flex-direction: column; /* Layout em coluna */
 }
@@ -68,12 +68,12 @@ body {
     transform: translateY(-2px);
 }
 
-/* Main Content - AGORA É ROLÁVEL */
+/* Main Content */
 .main-content {
     padding: 40px;
-    flex: 1; /* Ocupa espaço disponível */
-    overflow-y: auto; /* Adiciona rolagem vertical */
-    max-height: calc(90vh - 140px); /* Altura máxima considerando header e footer */
+    flex: 1; 
+    overflow-y: auto;
+    max-height: calc(90vh - 140px); 
 }
 
 .page-title {

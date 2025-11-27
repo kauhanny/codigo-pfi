@@ -10,7 +10,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header com Menu -->
     <header class="header">
       <nav class="nav-menu">
         <a href="/minhaagenda" class="nav-link active">📅 Minha Agenda</a>
@@ -25,7 +24,6 @@
       <h1 class="page-title">📅 Minha Agenda</h1>
       <p class="page-subtitle">Confira seu histórico de agendamentos e serviços realizados</p>
 
-      <!-- Filtros -->
       <div class="filters">
         <button class="filter-btn active" data-filter="all">Todos</button>
         <button class="filter-btn" data-filter="pending">Próximos</button>
@@ -33,7 +31,6 @@
         <button class="filter-btn" data-filter="cancelled">Cancelados</button>
       </div>
 
-      <!-- Estatísticas -->
       <div class="stats-cards">
         <div class="stat-card">
           <div class="stat-icon">📅</div>
@@ -58,19 +55,16 @@
         </div>
       </div>
 
-      <!-- Lista de Agendamentos -->
       <section class="agendamentos-section">
         <h2>📋 Meus Agendamentos</h2>
         
         <div class="agendamentos-list" id="agendamentos-list">
-          <!-- Os agendamentos serão carregados aqui via JavaScript -->
           <div class="loading">
             <i class="fas fa-spinner fa-spin"></i>
             <p>Carregando seus agendamentos...</p>
           </div>
         </div>
 
-        <!-- Mensagem quando não há agendamentos -->
         <div class="no-agendamentos" id="no-agendamentos" style="display: none;">
           <div class="empty-state">
             <div class="empty-icon">📅</div>
@@ -81,7 +75,6 @@
         </div>
       </section>
 
-      <!-- Histórico de Serviços -->
       <section class="historico-section">
         <h2>📊 Histórico de Serviços</h2>
         
@@ -106,7 +99,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-links">
         <a href="/servicos" class="footer-link">Serviços</a>

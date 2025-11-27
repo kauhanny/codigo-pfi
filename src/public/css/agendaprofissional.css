@@ -68,7 +68,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Main Content - AGORA É ROLÁVEL */
+/*  ROLÁVEL */
 .main-content {
     padding: 40px;
     flex: 1;
@@ -84,7 +84,7 @@ body {
     font-weight: 700;
 }
 
-/* Estatísticas - APENAS UMA CARD CENTRALIZADA */
+/* Estatísticas  */
 .estatisticas {
     display: flex;
     justify-content: center;

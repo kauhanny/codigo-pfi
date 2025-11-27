@@ -8,13 +8,13 @@
 body, html {
     height: 100%;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Remove rolagem horizontal */
+    overflow-x: hidden; 
 }
 
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Mudei de center para flex-start */
+    align-items: flex-start;
     min-height: 100vh;
     background: url('../img/imagem.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -29,7 +29,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
-    max-height: 90vh; /* Altura máxima */
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
 }
@@ -39,7 +39,7 @@ body {
     background: linear-gradient(135deg, #a94f77, #d776ad);
     padding: 20px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    flex-shrink: 0; /* Não encolhe */
+    flex-shrink: 0; 
 }
 
 .nav-menu {
@@ -68,13 +68,13 @@ body {
     transform: translateY(-2px);
 }
 
-/* Main Content - AGORA É ROLÁVEL */
+/* Main Content - É ROLÁVEL */
 .main-content {
     padding: 40px;
-    min-height: auto; /* Remove altura mínima fixa */
-    flex: 1; /* Ocupa espaço disponível */
-    overflow-y: auto; /* Adiciona rolagem vertical */
-    max-height: calc(90vh - 140px); /* Altura máxima considerando header e footer */
+    min-height: auto; 
+    flex: 1; 
+    overflow-y: auto; 
+    max-height: calc(90vh - 140px);
 }
 
 .page-title {
@@ -293,7 +293,6 @@ body {
     border: 1px solid #ffb400;
 }
 
-/* Badge para serviços populares */
 .badge-popular {
     position: absolute;
     top: 10px;
@@ -376,7 +375,7 @@ body {
     color: white;
     padding: 30px 20px;
     text-align: center;
-    flex-shrink: 0; /* Não encolhe */
+    flex-shrink: 0; /
 }
 
 .footer-links {

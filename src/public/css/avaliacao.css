@@ -13,7 +13,7 @@ body {
     align-items: center;
     min-height: 100vh;
 
-    /* mesmo estilo da sua tela de login */
+    /* mesmo estilo da tela de login */
     background: url('../img/imagem.jpg');
     background-size: cover;
     background-position: center;

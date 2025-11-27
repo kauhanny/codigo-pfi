@@ -13,7 +13,7 @@ async function carregarAvaliacoesNosServicos(servicos) {
     // Para cada serviço, buscar as avaliações do profissional
     for (let servico of servicos) {
         try {
-            // ⭐ LINHA CORRIGIDA - usa profissional_id em vez do nome
+            //  usa profissional_id em vez do nome
             const response = await fetch(`/api/avaliacoes-media/${encodeURIComponent(servico.nome_profissional)}`);
             
             if (response.ok) {
@@ -261,7 +261,7 @@ function exibirServicosDoProfissional(servicos) {
     container.innerHTML = html;
 }
 
-// Deletar serviço - VERSÃO CORRIGIDA
+// Deletar serviço 
 async function deletarServicoDaLista(servicoId) {
     console.log(`🗑️  Tentando deletar serviço ${servicoId}`);
     

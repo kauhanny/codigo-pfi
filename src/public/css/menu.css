@@ -11,14 +11,13 @@ body, html {
 }
 
 body {
-     display: block; /* MUDAR de flex para block */
+     display: block; 
     justify-content: normal;
     align-items: normal;
     min-height: 100vh;
     background: url('../img/imagem.jpg') no-repeat center center fixed;
     background-size: cover;
     padding: 20px;
-    /* ADICIONE: */
     height: auto;
 }
 
@@ -29,7 +28,6 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
-    /* ADICIONE ESTAS LINHAS: */
     margin: 20px auto;
     min-height: auto;
 }
@@ -79,7 +77,6 @@ body {
     font-weight: 700;
 }
 
-/* Seção de Inspiração */
 .inspiration-section {
     margin-bottom: 50px;
 }
