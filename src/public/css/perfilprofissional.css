@@ -32,6 +32,7 @@ body {
     max-height: 90vh; 
     display: flex;
     flex-direction: column;
+}
 
 /* Header */
 .header {
@@ -493,7 +494,7 @@ body {
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
-/* ========== MODAL========== */
+/* ========== MODAL CORRIGIDO ========== */
 .modal {
     display: none;
     position: fixed;
@@ -503,6 +504,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
 }
 
 .modal-backdrop {
@@ -513,7 +515,7 @@ body {
 }
 
 .modal-content-scrollable {
-    position: relative;
+    position: relative; 
     background-color: white;
     margin: 2% auto;
     padding: 0;
@@ -525,6 +527,8 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    left: 0;
+    right: 0;
 }
 
 .modal-header {
@@ -795,7 +799,7 @@ body {
     color: white;
     padding: 30px 20px;
     text-align: center;
-    flex-shrink: 0; /* Não encolhe */
+    flex-shrink: 0; 
 }
 
 .footer-links {
@@ -897,6 +901,7 @@ body {
     .modal-content-scrollable {
         margin: 5% auto;
         width: 95%;
+        max-width: 95%;
         max-height: 85vh;
     }
     
@@ -950,6 +955,12 @@ body {
     
     .main-content {
         max-height: calc(98vh - 110px);
+    }
+    
+    .modal-content-scrollable {
+        margin: 2% auto;
+        width: 98%;
+        max-width: 98%;
     }
 }
 
